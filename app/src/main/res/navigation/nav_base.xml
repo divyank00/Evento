@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.collegeproject.base.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.collegeproject.base.FavouriteFragment"
+        android:label="FavouriteFragment"
+        tools:layout="@layout/fragment_favourite" />
+
+    <fragment
+        android:id="@+id/addEventFragment"
+        android:name="com.example.collegeproject.base.AddEvent"
+        android:label="AddEventFragment"
+        tools:layout="@layout/fragment_add_event" />
+
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.example.collegeproject.base.TicketFragment"
+        android:label="TicketFragment"
+        tools:layout="@layout/fragment_ticket" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.collegeproject.base.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
