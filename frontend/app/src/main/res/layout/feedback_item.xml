@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.willy.ratingbar.RotationRatingBar
+        android:id="@+id/simpleRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srb_numStars="5"
+        app:srb_minimumStars="0"
+        app:srb_rating="2"
+        app:srb_starWidth="20dp"
+        app:srb_starHeight="20dp"
+        app:srb_starPadding="5dp"
+        app:srb_stepSize="1"
+        app:srb_isIndicator="true"
+        app:srb_clickable="false"
+        app:srb_scrollable="true"
+        android:paddingHorizontal="5dp"
+        app:srb_clearRatingEnabled="true"
+        app:srb_drawableEmpty="@drawable/star_off"
+        app:srb_drawableFilled="@drawable/star_on">
+    </com.willy.ratingbar.RotationRatingBar>
+
+    <TextView
+        android:layout_marginBottom="5dp"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="5dp"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Feedback"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey" />
+</LinearLayout>

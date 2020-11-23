@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This Motion Scene contains 10 Constraint Sets and 9 Transitions between them.
+Each constraint set derives from the previous set and hence only the changes
+from the previous set are present (the rest are 'derived', duh..)
+
+The naming convention for the sets are "set1_, set2_ ... set10_.
+There are 9 transitions, 1 between every 2 consecutive sets.
+For ex: 1 -> 2, 2 -> 3 ... 9 -> 10.
+-->
+
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////// Constraint Sets /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1) Base Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet android:id="@+id/set1_base">
+        <Constraint android:id="@id/fab">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:layout_marginBottom="@dimen/fab_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/fab_radius" />
+
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="@dimen/fab_elevation" />
+        </Constraint>
+
+        <Constraint android:id="@id/filter_icon">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                app:layout_constraintBottom_toBottomOf="@id/fab"
+                app:layout_constraintEnd_toEndOf="@id/fab"
+                app:layout_constraintStart_toStartOf="@id/fab" />
+
+            <CustomAttribute
+                app:attributeName="colorFilter"
+                app:customColorValue="@color/filter_icon_color" />
+        </Constraint>
+
+        <Constraint android:id="@id/view_pager">
+            <Transform android:translationY="32dp" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/tabLayout">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/tabs_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/view_pager" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/bottom_bar_card_view">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/bottom_bar_height"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+
+            <CustomAttribute
+                app:attributeName="cardBackgroundColor"
+                app:customColorValue="@android:color/transparent" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/close_icon">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_bar_card_view"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bottom_bar_card_view" />
+
+            <PropertySet android:visibility="invisible" />
+            <Transform android:rotation="0" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 2) Path Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set2_path"
+        app:deriveConstraintsFrom="@id/set1_base">
+        <Constraint android:id="@id/fab">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/filter_sheet_placeholder"
+                app:layout_constraintEnd_toEndOf="@id/filter_sheet_placeholder"
+                app:layout_constraintStart_toStartOf="@id/filter_sheet_placeholder"
+                app:layout_constraintTop_toTopOf="@id/filter_sheet_placeholder" />
+
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="@dimen/fab_elevation_2" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 3) Reveal Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set3_reveal"
+        app:deriveConstraintsFrom="@id/set2_path">
+        <Constraint android:id="@id/fab">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/filter_sheet_placeholder"
+                app:layout_constraintEnd_toEndOf="@id/filter_sheet_placeholder"
+                app:layout_constraintStart_toStartOf="@id/filter_sheet_placeholder"
+                app:layout_constraintTop_toTopOf="@id/filter_sheet_placeholder" />
+
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+        </Constraint>
+        <Constraint android:id="@id/filter_icon">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_bar_card_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bottom_bar_card_view" />
+        </Constraint>
+
+        <!-- Unnecessary override - will be fixed in beta5 -->
+        <Constraint android:id="@id/view_pager">
+            <Transform android:translationY="32dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 4) Settle Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set4_settle"
+        app:deriveConstraintsFrom="@id/set3_reveal">
+
+        <Constraint android:id="@id/filter_icon">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_bar_card_view"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toTopOf="@id/bottom_bar_card_view" />
+
+            <CustomAttribute
+                app:attributeName="colorFilter"
+                app:customColorValue="@color/filter_icon_active_color" />
+        </Constraint>
+
+        <Constraint android:id="@id/view_pager">
+            <Transform android:translationY="0dp" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/tabLayout">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/tabs_height"
+                app:layout_constraintBottom_toTopOf="@id/view_pager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/bottom_bar_card_view">
+            <CustomAttribute
+                app:attributeName="cardBackgroundColor"
+                app:customColorValue="@color/bottom_bar_color" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/close_icon">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_bar_card_view"
+                app:layout_constraintEnd_toStartOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toTopOf="@id/bottom_bar_card_view" />
+
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 5) Collapse Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set5_filterCollapse"
+        app:deriveConstraintsFrom="@id/set4_settle">
+
+        <Constraint android:id="@id/fab">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/filter_sheet_placeholder"
+                app:layout_constraintEnd_toEndOf="@id/filter_sheet_placeholder"
+                app:layout_constraintStart_toStartOf="@id/filter_sheet_placeholder"
+                app:layout_constraintTop_toTopOf="@id/filter_sheet_placeholder" />
+
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/fab_radius" />
+        </Constraint>
+
+        <Constraint android:id="@id/filter_icon">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                app:layout_constraintBottom_toBottomOf="@id/fab"
+                app:layout_constraintEnd_toEndOf="@id/fab"
+                app:layout_constraintStart_toStartOf="@id/fab" />
+
+            <CustomAttribute
+                app:attributeName="colorFilter"
+                app:customColorValue="@color/filter_icon_color" />
+
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/view_pager">
+            <Transform
+                android:scaleX="0.8"
+                android:scaleY="0.8" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/tabLayout">
+            <Transform
+                android:scaleX="0.8"
+                android:scaleY="0.8" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/bottom_bar_card_view">
+            <Layout
+                android:layout_width="@dimen/fab_size_inset"
+                android:layout_height="@dimen/fab_size_inset"
+                app:layout_constraintBottom_toBottomOf="@id/fab"
+                app:layout_constraintEnd_toEndOf="@id/fab"
+                app:layout_constraintStart_toStartOf="@id/fab"
+                app:layout_constraintTop_toTopOf="@id/fab" />
+
+            <CustomAttribute
+                app:attributeName="cardBackgroundColor"
+                app:customColorValue="@color/colorAccent" />
+
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/fab_radius_inset" />
+        </Constraint>
+
+        <Constraint android:id="@id/close_icon">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_bar_card_view"
+                app:layout_constraintEnd_toEndOf="@id/bottom_bar_card_view"
+                app:layout_constraintStart_toStartOf="@id/bottom_bar_card_view"
+                app:layout_constraintTop_toTopOf="@id/bottom_bar_card_view" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 6) Filter Loading Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set6_filterLoading"
+        app:deriveConstraintsFrom="@id/set5_filterCollapse">
+        <Constraint android:id="@id/close_icon">
+            <Transform android:rotation="270" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 7) Filter Base Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set7_filterBase"
+        app:deriveConstraintsFrom="@id/set6_filterLoading">
+        <Constraint android:id="@id/fab">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:layout_marginBottom="@dimen/fab_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="@dimen/fab_elevation" />
+        </Constraint>
+
+        <!-- Unnecessary override - will be fixed in beta5 -->
+        <Constraint android:id="@id/close_icon">
+            <Transform android:rotation="270" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 8) Unfilter Inset Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set8_unfilterInset"
+        app:deriveConstraintsFrom="@id/set7_filterBase">
+        <Constraint android:id="@id/fab">
+            <Layout
+                android:layout_width="@dimen/fab_size_inset"
+                android:layout_height="@dimen/fab_size_inset"
+                android:layout_marginEnd="@dimen/fab_margin_inset"
+                android:layout_marginBottom="@dimen/fab_margin_inset"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </Constraint>
+
+        <!-- Unnecessary override - will be fixed in beta5 -->
+        <Constraint android:id="@id/close_icon">
+            <Transform android:rotation="270" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 9) Unfilter Loading Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set9_unfilterLoading"
+        app:deriveConstraintsFrom="@id/set8_unfilterInset">
+
+        <!-- Unnecessary override - will be fixed in beta5 -->
+        <Constraint android:id="@id/close_icon">
+            <Transform android:rotation="540" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 10) Unfilter Outset Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/set10_unfilterOutset"
+        app:deriveConstraintsFrom="@id/set9_unfilterLoading">
+
+        <Constraint android:id="@id/fab">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:layout_marginBottom="@dimen/fab_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/filter_icon">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/close_icon">
+            <PropertySet android:visibility="invisible" />
+            <!-- Unnecessary override - will be fixed in beta5 -->
+            <Transform android:rotation="540" />
+        </Constraint>
+
+        <Constraint android:id="@id/bottom_bar_card_view">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////// Transitions /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1 -> 2: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/set2_path"
+        app:constraintSetStart="@id/set1_base"
+        app:duration="@integer/pathAnimDuration">
+
+        <!-- For Arc Path -->
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@id/fab"
+                app:percentX="0.85"
+                app:percentY="0.15" />
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@id/filter_icon"
+                app:percentX="0.85"
+                app:percentY="0.15" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- /////////////////////////////////
+    // 2 -> 3: Reveal Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/set3_reveal"
+        app:constraintSetStart="@id/set2_path"
+        app:duration="@integer/revealAnimDuration">
+
+        <!-- At 80% of animation, reach max size of fab with radius
+          as a circle (160dp doesn't matter as the CustomCardView will
+          monitor the radius to never exceed size/2). The remaining 20% will
+          un-curve the circle corners (radius = 0 at 100%)-->
+        <KeyFrameSet>
+            <KeyAttribute
+                app:framePosition="80"
+                app:motionTarget="@id/fab">
+                <CustomAttribute
+                    app:attributeName="radius"
+                    app:customDimension="160dp" />
+            </KeyAttribute>
+            <KeyPosition
+                app:framePosition="80"
+                app:motionTarget="@id/fab"
+                app:percentHeight="1"
+                app:percentWidth="1" />
+            <KeyPosition
+                app:framePosition="80"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@id/filter_icon"
+                app:percentY="1" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- /////////////////////////////////
+    // 3 -> 4: Settle Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/set4_settle"
+        app:constraintSetStart="@id/set3_reveal"
+        app:duration="@integer/settleAnimDuration" />
+
+    <!-- /////////////////////////////////
+    // 4 -> 5: Filter Collapse Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/set5_filterCollapse"
+        app:constraintSetStart="@id/set4_settle"
+        app:duration="@integer/collapseAnimDuration">
+
+        <!-- The fab needs to start off as a big circle which
+        then collapses. We do this in framePosition=1 because for
+        some reason framePosition=0 is not used by MotionLayout -->
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:framePosition="1"
+                app:motionTarget="@id/fab">
+                <CustomAttribute
+                    app:attributeName="radius"
+                    app:customDimension="600dp" />
+            </KeyAttribute>
+        </KeyFrameSet>
+
+        <!-- framePosition=30: fade and scale out the unwanted views. -->
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="30"
+                app:motionTarget="@id/filter_icon" />
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:framePosition="30"
+                app:motionTarget="@id/tabLayout" />
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:framePosition="30"
+                app:motionTarget="@id/view_pager" />
+        </KeyFrameSet>
+
+        <!-- framePosition=45: Scale the fab circle to it's max position before
+         it collapses. We keep height & width percent at 0 because the fab size
+         changes from sheet size to collapsed size and we want the collapse to happen
+         after framePos=45. Until then the 'anticipation' happens only using scaling. -->
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="1.75"
+                android:scaleY="1.75"
+                app:framePosition="45"
+                app:motionTarget="@id/fab">
+                <CustomAttribute
+                    app:attributeName="radius"
+                    app:customDimension="600dp" />
+            </KeyAttribute>
+            <KeyPosition
+                app:framePosition="45"
+                app:motionTarget="@id/fab"
+                app:percentHeight="0"
+                app:percentWidth="0" />
+        </KeyFrameSet>
+
+        <!-- framePosition=65: the bottom bar reaches it's final state.
+         Bottom bar and close icon close in and inset into the fab.
+         We simulate final state here by setting the 'percent' values to '1' -->
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="65"
+                app:motionTarget="@id/bottom_bar_card_view"
+                app:percentHeight="1"
+                app:percentWidth="1"
+                app:percentX="1"
+                app:percentY="1" />
+            <KeyAttribute
+                app:framePosition="65"
+                app:motionTarget="@id/bottom_bar_card_view">
+                <CustomAttribute
+                    app:attributeName="radius"
+                    app:customDimension="@dimen/fab_radius_inset" />
+            </KeyAttribute>
+            <KeyPosition
+                app:framePosition="65"
+                app:motionTarget="@id/close_icon"
+                app:percentHeight="1"
+                app:percentWidth="1"
+                app:percentX="1"
+                app:percentY="1" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- /////////////////////////////////
+    // 5 -> 6: Filter Loading Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/set6_filterLoading"
+        app:constraintSetStart="@id/set5_filterCollapse"
+        app:duration="@integer/loadingAnimDuration"
+        app:motionInterpolator="easeOut" />
+
+    <!-- /////////////////////////////////
+    // 6 -> 7: Filter Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/set7_filterBase"
+        app:constraintSetStart="@id/set6_filterLoading"
+        app:duration="@integer/pathAnimDuration"
+        app:motionInterpolator="easeOut">
+
+        <!-- Arc path the fab, close icon and pink bottom bar (inset circle) -->
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@id/fab"
+                app:percentX="0.15"
+                app:percentY="0.85" />
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@id/close_icon"
+                app:percentX="0.15"
+                app:percentY="0.85" />
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@id/bottom_bar_card_view"
+                app:percentX="0.15"
+                app:percentY="0.85" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- /////////////////////////////////
+    // 7 -> 8: Unfilter Inset Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/set8_unfilterInset"
+        app:constraintSetStart="@id/set7_filterBase"
+        app:duration="@integer/insetAnimDuration"
+        app:motionInterpolator="easeIn" />
+
+    <!-- /////////////////////////////////
+    // 8 -> 9: Unfilter Loading Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/set9_unfilterLoading"
+        app:constraintSetStart="@id/set8_unfilterInset"
+        app:duration="@integer/loadingAnimDuration"
+        app:motionInterpolator="easeOut" />
+
+    <!-- /////////////////////////////////
+    // 9 -> 10: Unfilter Outset Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/set10_unfilterOutset"
+        app:constraintSetStart="@id/set9_unfilterLoading"
+        app:duration="@integer/insetAnimDuration"
+        app:motionInterpolator="easeOut">
+
+        <!-- framePosition=50: Fade out close icon and bottom bar
+        while the filter icon shows itself -->
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="50"
+                app:motionTarget="@id/filter_icon" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="50"
+                app:motionTarget="@id/bottom_bar_card_view" />
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>

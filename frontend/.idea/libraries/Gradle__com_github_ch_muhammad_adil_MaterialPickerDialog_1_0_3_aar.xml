@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.ch-muhammad-adil:MaterialPickerDialog:1.0.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6a560b5b376d60d8c05b1bad8420cfb1/jetified-MaterialPickerDialog-1.0.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6a560b5b376d60d8c05b1bad8420cfb1/jetified-MaterialPickerDialog-1.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6a560b5b376d60d8c05b1bad8420cfb1/jetified-MaterialPickerDialog-1.0.3/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ch-muhammad-adil/MaterialPickerDialog/1.0.3/c889e126ce189b3dd930c19ce61bb984c0e02b27/MaterialPickerDialog-1.0.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ch-muhammad-adil/MaterialPickerDialog/1.0.3/de1ddc0a42ec79ffb0cf8fd9b43c016f6446b183/MaterialPickerDialog-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

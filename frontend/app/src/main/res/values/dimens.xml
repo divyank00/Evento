@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+
+    <dimen name="header_view_start_margin_left">16dp</dimen>
+    <dimen name="header_view_end_margin_left">40dp</dimen>
+    <dimen name="header_view_end_margin_right">14dp</dimen>
+    <dimen name="header_view_start_margin_bottom">14dp</dimen>
+    <dimen name="header_view_start_text_size">32sp</dimen>
+    <dimen name="header_view_end_text_size">18sp</dimen>
+
+    <dimen name="fab_elevation">16dp</dimen>
+    <dimen name="fab_elevation_2">32dp</dimen>
+    <dimen name="fab_pressed_elevation">8dp</dimen>
+
+    <dimen name="list_item_vertical_padding">24dp</dimen>
+    <dimen name="list_item_horizontal_padding">16dp</dimen>
+
+    <dimen name="filter_layout_padding">32dp</dimen>
+    <dimen name="sheet_peek_height">340dp</dimen>
+    <dimen name="tabs_height">64dp</dimen>
+    <dimen name="tab_item_width">110dp</dimen>
+    <dimen name="thumb_size">40dp</dimen>
+
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_size_inset">42dp</dimen>
+    <dimen name="fab_radius">36dp</dimen>
+    <dimen name="fab_radius_inset">28dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+    <dimen name="fab_margin_inset">40dp</dimen>
+
+    <dimen name="bottom_bar_icon_padding">24dp</dimen>
+    <dimen name="bottom_bar_height">@dimen/fab_size</dimen>
+    <dimen name="viewpager_bottom_padding">40dp</dimen>
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#4285f4</color>
+    <color name="green">#8BC34A</color>
+    <color name="blue">#4285f4</color>
+    <color name="black">#000000</color>
+    <color name="red">#d00000</color>
+    <color name="white">#ffffff</color>
+    <color name="darkGrey">#2a2f37</color>
+    <color name="grey">#C7C7C7</color>
+    <color name="shimmerGrey">#eeeeee</color>
+    <color name="hint">#808080</color>
+    <color name="golden">#FFDF00</color>
+
+    <color name="tab_bg_color">@color/blue</color>
+    <color name="tab_badge_color">#f44336</color>
+    <color name="viewpager_color">@color/primaryColor</color>
+    <color name="bottom_bar_color">@color/primaryColorDark</color>
+    <color name="bottom_bar_selected_color">@color/blue</color>
+    <color name="filter_pill_color">@color/primaryColorDark</color>
+    <color name="filter_pill_selected_color">@color/blue</color>
+
+    <color name="filter_icon_color">#89AFC2</color>
+    <color name="filter_icon_active_color">@color/white</color>
+
+    <color name="list_item_bg_collapsed">#E2FAFF</color>
+    <color name="list_item_bg_expanded">@color/white</color>
+    <color name="list_item_fg">#aa7CDDE7</color>
+
+    <color name="tab_unselected_color">#356E8C</color>
+    <color name="tab_selected_color">@color/white</color>
+
+    <color name="toolbar_title_color">#5FD5E1</color>
+
+    <color name="title_color">#84D6DE</color>
+    <color name="subtitle_color">#B0E7EF</color>
+    <color name="windowBackground">#51D1E2</color>
+    <color name="collapsing_icon">@color/black</color>
+
+</resources>
+
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+    <!--<resources>-->
+    <!--<color name="colorPrimary">#6200EE</color>-->
+    <!--<color name="colorPrimaryDark">#3700B3</color>-->
+    <!--<color name="colorAccent">#4285f4</color>-->
+    <!--<color name="green">#8BC34A</color>-->
+    <!--&lt;!&ndash;    <color name="blue">#4285f4</color>&ndash;&gt;-->
+    <!--<color name="blue">#6200EE</color>-->
+    <!--<color name="black">#000000</color>-->
+    <!--<color name="red">#d00000</color>-->
+    <!--<color name="white">#ffffff</color>-->
+    <!--<color name="darkGrey">#2a2f37</color>-->
+    <!--<color name="grey">#C7C7C7</color>-->
+    <!--<color name="shimmerGrey">#eeeeee</color>-->
+    <!--<color name="hint">#808080</color>-->
+    <!--<color name="golden">#FFDF00</color>-->
+    <!--<color name="fab">#4285f4</color>-->
+    <!--<color name="tab_bg_color">@color/colorPrimaryDark</color>-->
+    <!--<color name="tab_badge_color">@color/colorPrimary</color>-->
+    <!--<color name="viewpager_color">@color/colorPrimary</color>-->
+    <!--<color name="bottom_bar_color">@color/colorPrimaryDark</color>-->
+    <!--<color name="bottom_bar_selected_color">@color/colorAccent</color>-->
+
+    <!--<color name="filter_pill_color">@color/colorPrimaryDark</color>-->
+    <!--<color name="filter_pill_selected_color">@color/colorAccent</color>-->
+
+    <!--<color name="filter_seek_bar_color">#1C6690</color>-->
+    <!--<color name="filter_seek_bar_selected_color">#359CBA</color>-->
+
+    <!--<color name="filter_icon_color">#89AFC2</color>-->
+    <!--<color name="filter_icon_active_color">@color/white</color>-->
+
+    <!--<color name="tab_unselected_color">#356E8C</color>-->
+    <!--<color name="tab_selected_color">@color/white</color>-->
+
+    <!--<color name="collapsing_icon">@color/black</color>-->
+
+    <!--</resources>-->
