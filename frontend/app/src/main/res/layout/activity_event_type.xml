@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".addEvent.eventType.EventType">
+
+    <include layout="@layout/toolbar" />
+
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_demo_angle="45"
+        app:shimmer_demo_child_count="20"
+        app:shimmer_demo_layout="@layout/event_info_shimmer_item"
+        app:shimmer_demo_layout_manager_type="linear_vertical" />
+
+</LinearLayout>

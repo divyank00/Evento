@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".event.feedback.FeedbackActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/attr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/feedback_box"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.willy.ratingbar.RotationRatingBar
+                android:id="@+id/simpleRatingBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/post"
+                app:layout_constraintBottom_toTopOf="@id/editText"
+                app:layout_constraintEnd_toEndOf="@id/editText"
+                app:layout_constraintStart_toStartOf="@id/editText"
+                app:srb_clearRatingEnabled="true"
+                app:srb_clickable="true"
+                app:srb_drawableEmpty="@drawable/star_off_white"
+                app:srb_drawableFilled="@drawable/star_on"
+                app:srb_isIndicator="false"
+                app:srb_minimumStars="0"
+                app:srb_numStars="5"
+                app:srb_rating="0"
+                app:srb_scrollable="true"
+                app:srb_starHeight="30dp"
+                app:srb_starPadding="15dp"
+                app:srb_starWidth="30dp"
+                app:srb_stepSize="1" />
+
+            <com.libizo.CustomEditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:hint="Add a feedback..."
+                android:imeActionLabel="search"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/shimmerGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/post"
+                app:layout_constraintStart_toStartOf="parent"
+                app:libIZO_setBorderColor="@color/grey"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setCornerRadius="10dp"
+                app:libIZO_setStrokeWidth="2dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:enabled="false"
+                android:src="@drawable/send"
+                android:tooltipText="Post"
+                app:backgroundTint="@color/blue"
+                app:elevation="0dp"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:maxImageSize="18sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@id/attr"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/attr"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shimmer_demo_angle="45"
+            app:shimmer_demo_child_count="20"
+            app:shimmer_demo_layout="@layout/event_info_shimmer_item"
+            app:shimmer_demo_layout_manager_type="linear_vertical" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

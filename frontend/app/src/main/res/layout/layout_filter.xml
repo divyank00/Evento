@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fab"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="@dimen/fab_radius"
+        app:cardElevation="@dimen/fab_elevation"
+        tools:layout_gravity="bottom|end"
+        tools:layout_margin="@dimen/fab_margin">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/fab_filter_icon"
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_gravity="bottom|center_horizontal"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_filter"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/fab_close_icon"
+                android:layout_width="@dimen/fab_size_inset"
+                android:layout_height="@dimen/fab_size_inset"
+                android:layout_gravity="center"
+                android:background="@drawable/close_icon_bg"
+                android:scaleType="centerInside"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_close"
+                app:tint="@android:color/white"
+                tools:visibility="gone" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="33dp"
+        android:visibility="invisible"
+        tools:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/filters_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/viewpager_color"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/bold"
+                android:background="@color/tab_bg_color"
+                app:tabIndicatorColor="@color/white"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/black" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sheet_peek_height"
+                android:alpha="0"
+                android:paddingBottom="@dimen/viewpager_bottom_padding" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bottom_bar_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:layout_gravity="bottom"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp">
+
+            <LinearLayout
+                android:id="@+id/bottom_bar_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                tools:background="#3fff">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/close_icon"
+                        android:layout_width="@dimen/fab_size"
+                        android:layout_height="@dimen/fab_size"
+                        android:layout_gravity="center"
+                        android:alpha="0"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_close"
+                        app:tint="#FFF"
+                        tools:alpha="1" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/filter_icon"
+                        android:layout_width="@dimen/fab_size"
+                        android:layout_height="@dimen/fab_size"
+                        android:layout_gravity="center"
+                        android:alpha="1"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_filter"
+                        app:tint="@color/filter_icon_color"
+                        tools:alpha="1" />
+                </FrameLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</merge>

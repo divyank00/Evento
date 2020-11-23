@@ -1,0 +1,4 @@
+<!-- res/transition/change_image_transform.xml -->
+<transitionSet>
+    <changeImageTransform/>
+</transitionSet>

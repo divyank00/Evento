@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:currentState="@id/set1_base"
+    app:layoutDescription="@xml/scene_filter"
+    app:motionDebug="NO_DEBUG"
+    app:showPaths="true"
+    tools:parentTag="androidx.constraintlayout.motion.widget.MotionLayout">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <View
+        android:id="@+id/filter_sheet_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.example.collegeproject.base.home.filterFAB.filter.views.CircleCardView
+        android:id="@+id/fab"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/fab_radius"
+        app:cardElevation="@dimen/fab_elevation" />
+
+    <ImageView
+        android:id="@+id/filter_icon"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:elevation="34dp"
+        android:outlineProvider="none"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@id/fab"
+        app:layout_constraintEnd_toEndOf="@id/fab"
+        app:layout_constraintStart_toStartOf="@id/fab"
+        app:srcCompat="@drawable/ic_filter"
+        app:tint="@color/filter_icon_color" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/viewpager_color"
+        android:elevation="33dp"
+        android:paddingBottom="@dimen/bottom_bar_height"
+        android:translationY="32dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/filter_sheet_placeholder"
+        app:layout_constraintEnd_toEndOf="@id/filter_sheet_placeholder"
+        app:layout_constraintStart_toStartOf="@id/filter_sheet_placeholder"
+        app:layout_constraintTop_toTopOf="@id/filter_sheet_placeholder" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tab_bg_color"
+        app:tabTextAppearance="@style/bold"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_pager" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottom_bar_card_view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:outlineProvider="none"
+        android:visibility="invisible"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="33dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/close_icon"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:elevation="34dp"
+        android:outlineProvider="none"
+        android:scaleType="centerInside"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar_card_view"
+        app:layout_constraintTop_toTopOf="@id/bottom_bar_card_view"
+        app:srcCompat="@drawable/ic_close"
+        app:tint="#FFF" />
+</merge>

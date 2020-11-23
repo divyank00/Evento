@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.libizo:customedittext:1.0.6@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bd8df5bfbb16904a303017b032156420/jetified-customedittext-1.0.6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bd8df5bfbb16904a303017b032156420/jetified-customedittext-1.0.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bd8df5bfbb16904a303017b032156420/jetified-customedittext-1.0.6/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.libizo/customedittext/1.0.6/a5c9924c982287563b077fe0145d3a6c2e029c0e/customedittext-1.0.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.libizo/customedittext/1.0.6/4a3dd7d79704d1accb3c6cb880949fb4313e8d54/customedittext-1.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

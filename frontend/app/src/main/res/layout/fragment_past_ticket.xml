@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".base.home.HomeFragment">
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/pastTickets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shimmer_demo_angle="45"
+            app:shimmer_demo_child_count="10"
+            app:shimmer_demo_layout="@layout/ticket_item_shimmer"
+            app:shimmer_demo_layout_manager_type="linear_vertical" />
+    </com.baoyz.widget.PullRefreshLayout>
+
+    <include
+        layout="@layout/no_result"
+        android:visibility="gone" />
+</RelativeLayout>
