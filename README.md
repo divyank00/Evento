@@ -47,7 +47,7 @@ Evento is a native Android application for exploring nearby events hosted. Event
 - **Libraries**: LiveData, ViewModel, [Retrofit](https://github.com/square/retrofit), 
 [Material Components](https://github.com/material-components/material-components-android),
 [ShimmerRecyclerView](https://github.com/sharish/ShimmerRecyclerView),
-[Picasso](https://github.com/square/picasso),[Lottie-Android](https://github.com/airbnb/lottie-android),
+[Picasso](https://github.com/square/picasso), [Lottie-Android](https://github.com/airbnb/lottie-android),
 [LikeButton](https://github.com/jd-alexander/LikeButton),
 [SpaceNavigationView](https://github.com/armcha/Space-Navigation-View)
 
